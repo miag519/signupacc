@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, session, request, jsonify, render_template, flash
 from markupsafe import Markup
-from flask_apscheduler import APScheduler
-from apscheduler.schedulers.background import BackgroundScheduler
+#from flask_apscheduler import APScheduler
+#from apscheduler.schedulers.background import BackgroundScheduler
 from flask_oauthlib.client import OAuth
 from bson.objectid import ObjectId
 
@@ -37,7 +37,7 @@ github = oauth.remote_app(
 url = os.environ["MONGO_CONNECTION_STRING"]
 client = pymongo.MongoClient(url)
 db = client[os.environ["MONGO_DBNAME"]]
-collection = db['posts'] #TODO: put the name of the collection here
+collection = db['users'] #TODO: put the name of the collection here
 
 # Send a ping to confirm a successful connection
 try:
