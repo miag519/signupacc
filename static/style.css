@@ -1,4 +1,74 @@
-
-body{
-	background-image: url('city.gif')
-	}
+.sidebar {
+    width: 170px;
+    background-color: #cbd6e2;
+    color: #424242;
+    padding: 20px;
+    cursor: pointer, auto;
+}
+.sidebar a {
+    color: #424242;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
+    cursor: pointer, auto;
+}
+a:link, a:visited {
+    color: #424242;
+    cursor: pointer;
+}
+img {
+    mix-blend-mode: multiply;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.center {
+    display: block;
+    text-align: -webkit-center;
+}
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #788585;
+    font-size: 16px;
+    cursor: pointer, auto;
+}
+.container {
+    display: flex;
+    width: 800px;
+    height: 500px;
+    box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    cursor: pointer, auto;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('city.gif');
+    background-size: 800px;
+    cursor: pointer, auto;
+    transition: background-color 0.5s ease;
+    background-color: #424242;

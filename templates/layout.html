@@ -26,10 +26,21 @@
   </head>
   <body>
     {% include 'navbar.html' %}
-
+<div class="container">
+	<div class="sidebar">
+	<p><a href="/">Homepage</a></p>
+	<p><a href="/page1">pg1</a></p>
+	<p><a href="/page2">pg2</a></p>
+	<p><a href="/pong">game</a></p>
+	</div>
+	
+	<div class="content">
+    
     <div id="content">
       {% block content %}{% endblock %}
     </div>
 
   </body>
 </html>
+
+    

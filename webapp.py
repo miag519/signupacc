@@ -56,6 +56,9 @@ def inject_logged_in():
 @app.route('/')
 def home():
     return render_template('home.html')
+@app.route('/pong')
+def pong():
+    return render_template('pong.html')
 
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
