@@ -1,12 +1,12 @@
 .sidebar {
-    width: 170px;
-    background-color: #cbd6e2;
-    color: #424242;
+    width: 150px;
+    background-color: #fff3ee;
+    color: #b78d7b;
     padding: 20px;
     cursor: pointer, auto;
 }
 .sidebar a {
-    color: #424242;
+    color: #845a48;
     text-decoration: none;
     text-align: center;
     transition: all 0.2s ease-in-out;
@@ -18,7 +18,7 @@
     cursor: pointer, auto;
 }
 a:link, a:visited {
-    color: #424242;
+    color: #be9989;
     cursor: pointer;
 }
 img {
@@ -49,7 +49,7 @@ h1 {
 }
 .container {
     display: flex;
-    width: 700px;
+    width: 800px;
     height: 500px;
     box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -67,8 +67,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("https://cdn.dribbble.com/userupload/6215159/file/original-44208dcfde421bd35e01d7ac1e9dc1ea.png?resize=752x");
-    background-size: 512px;
+    background-image: url('city.gif');
+    background-size: 800px;
     cursor: pointer, auto;
     transition: background-color 0.5s ease;
     background-color: #424242;
