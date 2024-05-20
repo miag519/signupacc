@@ -72,3 +72,10 @@ body {
     cursor: pointer, auto;
     transition: background-color 0.5s ease;
     background-color: #424242;
+}
+.user{
+  font-size: 10px;
+  color: #3b1f2b;
+  font-family: "Copperplate", "Fantasy";
+	
+}
