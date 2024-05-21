@@ -22,11 +22,11 @@
 	<br>
 	<br>
 	<br>
+	<br>
 	<ul class="nav flex-column">
-    	{% if logged_in %}
-	    	<li><span class="navbar-text user">Github userid: {{ session['user_data']['login']}}</span></li>
-	    	<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-		{% else %}
-	    	<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-		{% endif %}
-    </ul>
+    {% if logged_in %}
+	    <li><span class="navbar-text user">Github userid: {{ session['user_data']['login']}}</span></li>
+	    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+	{% else %}
+	    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+	{% endif %}
