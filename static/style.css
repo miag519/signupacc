@@ -71,4 +71,8 @@ body {
     background-size: 800px;
     cursor: pointer, auto;
     transition: background-color 0.5s ease;
-    background-color: #424242;
+background-color: #424242; }
+
+div.c {
+  text-align: right;
+}
