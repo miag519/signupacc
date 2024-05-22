@@ -51,7 +51,6 @@ except Exception as e:
 #this context processor adds the variable logged_in to the conext for all templates
 @app.context_processor
 def inject_logged_in():
-    is_logged_in = 'github_token' in session
     return {"logged_in":('github_token' in session)}
 
 @app.route('/')
@@ -79,12 +78,14 @@ def authorized():
         try:
             session['github_token'] = (resp['access_token'], '') #save the token to prove that the user logged in
             session['user_data']=github.get('user').data
-            message = 'You were successfully logged in as ' + session['user_data']['login'] + '.'
+            #pprint.pprint(vars(github['/email']))
+            #pprint.pprint(vars(github['api/2/accounts/profile/']))
+            flash('You were successfully logged in as ' + session['user_data']['login'] + '.')
         except Exception as inst:
             session.clear()
             print(inst)
-            message = 'Unable to login, please try again.', 'error'
-    return render_template('message.html', message=message)
+            flash('Unable to login, please try again.', 'error')
+    return redirect('/')
 
 
 @app.route('/page1')
