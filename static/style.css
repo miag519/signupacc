@@ -86,11 +86,14 @@ body {
 
 /* Styling the main container */
 .containers {
-    width: 80%;
-    margin: auto;
-    margin-top: 2rem;
-    letter-spacing: 0.5px;
-    height: 80%;
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #788585;
+    font-size: 16px;
+    cursor: pointer, auto;
 }
 
 img {
@@ -122,6 +125,7 @@ img {
     height: auto; 
     float: left;
     margin: 0;
+	padding: 5px 50px;
 }
 
 /* styling user-name */
@@ -274,7 +278,7 @@ received-chats-img {
 
 .outgoing-chats-msg p {
     background-color: #3a12ff;
-    background-image: linear-gradient(45deg, #ee087f 0%, #DD2A7B 25%, #9858ac 50%, #8134AF 75%, #515BD4 100%);
+    background-image: linear-gradient(90deg, hsla(287, 23%, 65%, 1) 0%, hsla(23, 64%, 75%, 1) 100%);
     color: #fff;
     border-radius: 10px;
     font-size: 14px;

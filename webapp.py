@@ -95,7 +95,7 @@ def renderPage1():
     else:
         user_data_pprint = '';
     return render_template('Page1.html',dump_user_data=user_data_pprint)
-
+    
 @app.route('/page2')
 def renderPage2():
     return render_template('page2.html')
@@ -104,7 +104,9 @@ def renderPage2():
 @github.tokengetter
 def get_github_oauth_token():
     return session['github_token']
-
-
+    
+     
+   
+    
 if __name__ == '__main__':
     app.run()

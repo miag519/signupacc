@@ -11,16 +11,118 @@
 	
 	</div>
 	
-    <div class="content">
-    <h1>This is Page 1</h1>
+<div class="content">
+<div class="this">
+<div class="containers">
+      <!-- msg-header section starts -->
+      <div class="msg-header">
+        <div class="container1">
+          <img src="user1.png" class="msgimg" />
+          <div class="active">
+            <p>User name</p>
+          </div>
+        </div>
+      </div>
+      <!-- msg-header section ends -->
 
-    <p>Lorem ipsum sit dolor amet.</p>
-	
-  <pre>
-    {{ dump_user_data }}
-  </pre>
+      <!-- Chat inbox  -->
+      <div class="chat-page">
+        <div class="msg-inbox">
+          <div class="chats">
+            <!-- Message container -->
+            <div class="msg-page">
+              <!-- Incoming messages -->
+
+              <div class="received-chats">
+                <div class="received-chats-img">
+                  <img src="user2.png" />
+                </div>
+                <div class="received-msg">
+                  <div class="received-msg-inbox">
+                    <p>
+                      Hi !! practicw blah blah this will be 
+					  whatever this user sends blah blah blahpractice 
+					  writing blah blah blah blah!
+                    </p>
+                    <span class="time">18:06 PM | July 24</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Outgoing messages -->
+              <div class="outgoing-chats">
+                <div class="outgoing-chats-img">
+                  <img src="user1.png" />
+                </div>
+                <div class="outgoing-msg">
+                  <div class="outgoing-chats-msg">
+                    <p class="multi-msg">
+                      extra dhfhslnhdfhdskf sjfkcdjsf 
+					  skzdjf cksdj fcsl jskdf jjsdklf 
+					   sjdkf bcskldjf sl dfjkds fs.
+                    </p>
+                    <p class="multi-msg">
+                      Lorem ipsum dolor sit amet consectetur.
+                    </p>
+
+                    <span class="time">18:30 PM | July 24</span>
+                  </div>
+                </div>
+              </div>
+              <div class="received-chats">
+                <div class="received-chats-img">
+                  <img src="user2.png" />
+                </div>
+                <div class="received-msg">
+                  <div class="received-msg-inbox">
+                    <p class="single-msg">
+                      dhflsd fksldfj kdjf ksd jfkd 4kf 
+					   sdjf skidj flbskjd fklsd fksdf 
+					    skldejf bskldjf kdjiejuo we rad 
+						 wieop rweid rw.
+                    </p>
+                    <span class="time">18:31 PM | July 24</span>
+                  </div>
+                </div>
+              </div>
+              <div class="outgoing-chats">
+                <div class="outgoing-chats-img">
+                  <img src="user1.png" />
+                </div>
+                <div class="outgoing-msg">
+                  <div class="outgoing-chats-msg">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Velit, sequi.
+                    </p>
+
+                    <span class="time">18:34 PM | July 24</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- msg-bottom section -->
+
+          <div class="msg-bottom">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Write message..."
+              />
+
+              <span class="input-group-text send-icon">
+                <i class="bi bi-send"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
  </div>
  </div>
-  
+
 {% endblock %}
