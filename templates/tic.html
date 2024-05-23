@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% set active_page = "page2" %}
+
+{% block title %}tic{% endblock %}
+
+{% block content %} 
+
+
+<canvas width="450" height="285"></canvas>
+	<div id="main"> 
+		<div class = "ui"> 
+			<div class="row"> 
+				<input type="text" id= "b1"
+					class="cell" onclick="myfunc_3(); myfunc();"
+					readonly> 
+				<input type="text" id= "b2"
+					class="cell" onclick="myfunc_4(); myfunc();"
+					readonly> 
+				<input type="text" id= "b3" class="cell"
+					onclick="myfunc_5(); myfunc();"
+					readonly> 
+			</div> 
+			<div class="row"> 
+				<input type="text" id= "b4"
+					class="cell" onclick="myfunc_6(); myfunc();"
+					readonly> 
+				<input type="text" id= "b5"
+					class="cell" onclick="myfunc_7(); myfunc();"
+					readonly> 
+				<input type="text" id= "b6"
+					class="cell" onclick="myfunc_8(); myfunc();"
+					readonly> 
+			</div> 
+			<div class="row"> 
+				<input type="text" id= "b7"
+					class="cell" onclick="myfunc_9(); myfunc();"
+					readonly> 
+				<input type="text" id= "b8"
+					class="cell" onclick="myfunc_10();myfunc();"
+					readonly> 
+				<input type="text" id= "b9"
+					class="cell" onclick="myfunc_11();myfunc();"
+					readonly> 
+			</div> 
+		</div> 
+		<br><br><br> 
+		
+		<button id="but" onclick="myfunc_2()"> 
+			RESET 
+		</button> 
+		<br><br> 
+		<p id="print"></p> 
+	</div> 
+	 <script src="static/script.js"></script>
+	<p> Source for game is : https://www.geeksforgeeks.org/simple-tic-tac-toe-game-using-javascript/<p/>
+{% endblock %}
