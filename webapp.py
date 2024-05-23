@@ -76,6 +76,10 @@ def tic():
 @app.route('/sta')
 def sta():
     return render_template('stack.html')
+    
+@app.route('/flap')
+def flappyb():
+    return render_template('flap.html')
 
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
