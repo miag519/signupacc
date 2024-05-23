@@ -68,6 +68,14 @@ def pong():
 @app.route('/snake')
 def snake():
     return render_template('snake.html')
+    
+@app.route('/tic')
+def tic():
+    return render_template('tic.html')
+    
+@app.route('/sta')
+def sta():
+    return render_template('stack.html')
 
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
