@@ -102,7 +102,12 @@ def renderPage1():
     
 @app.route('/page2')
 def renderPage2():
-    return render_template('page2.html')
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+    else:
+        user_data_pprint = '';
+    return render_template('Page2.html',dump_user_data=user_data_pprint)
+
 
 #the tokengetter is automatically called to check who is logged in.
 @github.tokengetter

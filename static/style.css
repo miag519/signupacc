@@ -47,6 +47,16 @@ h1 {
     font-size: 16px;
     cursor: pointer, auto;
 }
+.txtcontent {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    color: #788585;
+    font-size: 16px;
+    cursor: pointer, auto;
+}
 .container {
     display: flex;
     width: 800px;
@@ -80,20 +90,18 @@ body {
 }
 .this {
     box-sizing: border-box;
-    font-family: "Copperplate", "Fantasy";
 }
 
 /* Styling the main container */
 .containers {
     padding: 20px;
     background-color: #ffffff;
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
     color: #788585;
     font-size: 16px;
     cursor: pointer, auto;
 }
-
 img {
     width: 50px;
     vertical-align: middle;
@@ -102,8 +110,7 @@ img {
 }
 /* Styling the msg-header container */
 .msg-header {
-    border: 1px solid #ccc;
-    width: 100%;
+    width: 550px;
     height: 10%;
     border-bottom: none;
     display: inline-block;
@@ -112,15 +119,9 @@ img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-/* Styling the profile picture */
-.msgimg {
-    margin-left: 2%;
-    float: left;
-}
-
 .container1 {
     width: 270px;
-    height: auto; 
+    height: 10%; 
     float: left;
     margin: 0;
 	padding: 5px 50px;
@@ -142,7 +143,6 @@ img {
 }
 
 .msg-inbox {
-    border: 1px solid #ccc;
     overflow: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -154,7 +154,7 @@ img {
 }
 
 .msg-page {
-    max-height: 500px;
+    max-height: 250px;
     overflow-y: auto;
 }
 

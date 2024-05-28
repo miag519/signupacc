@@ -7,7 +7,19 @@
         <a {% if active_page == "page1" %} class="nav-link active"{% else %}class="nav-link"{% endif %} href="/page1">Page 1</a>
       </li>
       <li class="nav-item">
-        <a {% if active_page == "page2" %} class="nav-link active"{% else %}class="nav-link"{% endif %} href="/page2">Page 2</a>
+        <a id="opage[@field:Unique_ID]" {% if active_page == "page2" %} class="nav-link active"{% else %}class="nav-link"{% endif %} href="/page2">Messaging</a>
+		<script type="text/javascript">
+document.addEventListener('message.html', function (event) {
+
+const link = document.getElementById("opage[@field:Unique_ID]");
+
+  if("user_data" != "logged in"){
+
+    link.style.display="none";
+  }
+  
+});
+</script>
       </li>
     </ul>
 	<br>

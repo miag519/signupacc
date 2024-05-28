@@ -26,24 +26,9 @@
 
   </head>
   <body>
-  <div class="container">
-    {% with messages = get_flashed_messages(with_categories=true) %} 
-      {% if messages %}
-         {% for category, message in messages %}
-            {% if category == "message" %}
-              {% set cls = "alert alert-danger alert-dismissible fade show" %}
-            {% elif category == "error" %}
-              {% set cls = "alert alert-warning alert-dismissible fade show" %}
-            {% endif %}
-            <div class="{{ cls }}">
-              <button type="button" class="btn-close" data-bs-dismiss="alert">&times;</button>
-              {{ message }}
-            </div>
-         {% endfor %}
-      {% endif %}
-    {% endwith %} 
+
    </div>
-	
+
     <div id="content">
       {% block content %}{% endblock %}
     </div>
