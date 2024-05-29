@@ -37,16 +37,6 @@ h1 {
     display: block;
     text-align: -webkit-center;
 }
-.content {
-    flex: 1;
-    padding: 20px;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    overflow-y: auto;
-    color: #788585;
-    font-size: 16px;
-    cursor: pointer, auto;
-}
 .txtcontent {
     flex: 1;
     padding: 20px;
@@ -57,6 +47,17 @@ h1 {
     font-size: 16px;
     cursor: pointer, auto;
 }
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #788585;
+    font-size: 16px;
+    cursor: pointer, auto;
+}
+
 .container {
     display: flex;
     width: 800px;

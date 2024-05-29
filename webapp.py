@@ -95,10 +95,7 @@ def renderPage1():
     else:
         user_data_pprint = '';
     return render_template('Page1.html',dump_user_data=user_data_pprint)
-    
-    
-    
-    
+        
     
 @app.route('/page2')
 def renderPage2():
