@@ -8,12 +8,10 @@
       </li>
 	  {% if logged_in %}
 	    <li class="nav-item">
-        <a {% if active_page == "page2" %} class="nav-link active"{% else %}class="nav-link"{% endif %} href="/page2">Message</a>
+        <a {% if active_page == "page2" %} class="nav-link active"{% else %}class="nav-link"{% endif %} href="/page2">Chat</a>
 		</li>
       {% else %}
-	    <li class="nav-item">
-	    <a class="nav-link disabled" href="/page2">Message</a>
-		</li>
+	    
 	  {% endif %}
 	  </ul>
 	<br>
