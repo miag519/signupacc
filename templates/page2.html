@@ -10,100 +10,52 @@
 	{% include 'navbar.html' %}
 	
 	</div>
-	
-<div class="txtcontent">
-<div class="this">
-<div class="containers">
-      <!-- msg-header section starts -->
-      <div class="msg-header">
-        <div class="container1">
-          <img src="user1.png" class="msgimg" />
-          <div class="active">
-            <p>other users date</p>
-          </div>
-        </div>
-      </div>
-      <!-- msg-header section ends -->
+<div class="content">
+<title>Chat: {{ room }}</title>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="//cdn.socket.io/4.4.1/socket.io.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket;
+            $(document).ready(function(){
+                socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
+                socket.on('connect', function() {
+                    socket.emit('joined', {});
+                });
+                socket.on('status', function(data) {
+                    $('#chat').val($('#chat').val() + '<' + data.msg + '>\n');
+                    $('#chat').scrollTop($('#chat')[0].scrollHeight);
+                });
+                socket.on('message', function(data) {
+                    $('#chat').val($('#chat').val() + data.msg + '\n');
+                    $('#chat').scrollTop($('#chat')[0].scrollHeight);
+                });
+                $('#text').keypress(function(e) {
+                    var code = e.keyCode || e.which;
+                    if (code == 13) {
+                        text = $('#text').val();
+                        $('#text').val('');
+                        socket.emit('text', {msg: text});
+                    }
+                });
+            });
+            function leave_room() {
+                socket.emit('left', {}, function() {
+                    socket.disconnect();
 
-      <!-- Chat inbox  -->
-      <div class="chat-page">
-        <div class="msg-inbox">
-          <div class="chats">
-            <!-- Message container -->
-            <div class="msg-page">
-              <!-- Incoming messages -->
+                    // go back to the login page
+                    window.location.href = "{{ url_for('main.home') }}";
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Flask-SocketIO-Chat: {{ room }}</h1>
+        <textarea id="chat" cols="80" rows="20"></textarea><br><br>
+        <input id="text" size="80" placeholder="Enter your message here"><br><br>
+        <a href="#" onclick="leave_room();">Leave this room</a>
+    </body>
+</html>
 
-              <div class="received-chats">
-                <div class="received-chats-img">
-                  <img src="user2.png" />
-                </div>
-                <div class="received-msg">
-                  <div class="received-msg-inbox">
-                    <p>
-                      Hi !! practicw blah blah this will be 
-					  whatever this user sends blah blah blahpractice 
-					  writing blah blah blah blah!
-                    </p>
-                    <span class="time">18:06 PM | July 24</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Outgoing messages -->
-              <div class="outgoing-chats">
-                <div class="outgoing-chats-img">
-                  <img src="user1.png" />
-                </div>
-                <div class="outgoing-msg">
-                  <div class="outgoing-chats-msg">
-                    <p class="multi-msg">
-                      extra dhfhslnhdfhdskf sjfkcdjsf 
-					  skzdjf cksdj fcsl jskdf jjsdklf 
-					   sjdkf bcskldjf sl dfjkds fs.
-                    </p>
-                    <p class="multi-msg">
-                      Lorem ipsum dolor sit amet consectetur.
-                    </p>
-
-                    <span class="time">18:30 PM | July 24</span>
-                  </div>
-                </div>
-              </div>
-              <div class="outgoing-chats">
-                <div class="outgoing-chats-img">
-                  <img src="user1.png" />
-                </div>
-                <div class="outgoing-msg">
-                  <div class="outgoing-chats-msg">
-                    <p>
-                      {{ sentmsg }}
-                    </p>
-
-                    <span class="time">18:34 PM | July 24</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- msg-bottom section -->
-
-          <div class="msg-bottom">
-            <div class="input-group">
-			<form method="POST">
-              <input
-                type="text"
-                class="form-control"
-				name="msg"
-                placeholder="Write message..."
-              />
-			  <button type="submit" class="btn">send</button>
-			 </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   
  </div>
  </div>

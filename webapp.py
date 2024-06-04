@@ -1,4 +1,5 @@
 from flask import Flask, redirect, url_for, session, request, jsonify, render_template, flash
+from flask_socketio import SocketIO
 from markupsafe import Markup
 from flask_apscheduler import APScheduler
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -14,10 +15,12 @@ import sys
  
 app = Flask(__name__)
 
+
 app.debug = True #Change this to False for production
 #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #Remove once done debugging
 
 app.secret_key = os.environ['SECRET_KEY'] #used to sign session cookies
+socketio = SocketIO(app)
 oauth = OAuth(app)
 oauth.init_app(app) #initialize the app to be able to make requests for user information
 
@@ -53,11 +56,11 @@ except Exception as e:
 @app.context_processor
 def inject_logged_in():
     return {"logged_in":('github_token' in session)}
-
+    
 @app.route('/')
 def home():
     return render_template('home.html')
-
+    
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
@@ -91,20 +94,8 @@ def authorized():
 
 @app.route('/page1')
 def renderPage1():
-    if 'user_data' in session:
-        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
-    else:
-        user_data_pprint = '';
-    return render_template('Page1.html',dump_user_data=user_data_pprint)
+    return render_template('Page1.html')
         
-    
-@app.route('/page2')
-def renderPage2():
-    if 'msg' in session:
-        sent_msg = request.form['msg']
-    else:
-        sent_msg = '';
-    return render_template('Page2.html',sentmsg=sent_msg)
 
 
 #the tokengetter is automatically called to check who is logged in.
@@ -117,3 +108,4 @@ def get_github_oauth_token():
     
 if __name__ == '__main__':
     app.run()
+    socketio.run(app)
