@@ -3,27 +3,19 @@
 {% set active_page = "home" %}
 
 {% block title %}Home{% endblock %}
-
 {% block content %}
 
 		
   <h1>Sign in to continue</h1>
 
   <p>(this is here the sign in stuff should take place)</p>
+  <br>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Open modal
+  </button>
+
+
+
   
-<br>
-  <!-- Trigger/Open The Modal -->
-<button id="myBtn" type="button">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
 
 {% endblock %}

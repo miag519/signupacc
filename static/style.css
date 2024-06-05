@@ -22,7 +22,7 @@ a:link, a:visited {
     cursor: pointer;
 }
 img {
-    mix-blend-mode: multiply;-->
+    mix-blend-mode: multiply;
 }
 h1 {
     display: block;
@@ -38,14 +38,21 @@ h1 {
     text-align: -webkit-center;
 }
 .content {
-    flex: 1;
+    flex: 1; 
     padding: 20px;
     background-color: #ffffff;
-    overflow-x: hidden;
-    overflow-y: auto;
+   /* overflow-x: hidden;
+    overflow-y: auto;*/
     color: #788585;
     font-size: 16px;
     cursor: pointer, auto;
+}
+#myModal {
+	z-index:0;
+	
+}
+.modal-backdrop{
+	z-index: -1;
 }
 .container {
     display: flex;
@@ -193,56 +200,13 @@ p {
 .flex-container {
   display: flex;
   background-color: aliceblue;
+  border-radius: 25px;
 }
 
 .flex-container > div {
+  border-radius: 70px;
   background-color: #f1f1f1;
   margin: 10px;
   padding: 20px;
   font-size: 30px;
-}
-
-/* 
-
-modal code
-
-*/
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 50%; /* Full width */
-  height: 50%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
 }

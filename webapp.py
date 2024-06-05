@@ -61,6 +61,10 @@ def home():
 def game():
     return render_template('gamep.html')
     
+@app.route('/prof')
+def profiles():
+    return render_template('prof.html')
+    
 @app.route('/pong')
 def pong():
     return render_template('pong.html')
