@@ -11,7 +11,7 @@
 	
 	</div>
 <div class="content">
-<title>Chat: {{ room }}</title>
+<h1>Chat: {{ room }}</h1>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="//cdn.socket.io/4.4.1/socket.io.min.js"></script>
         <script type="text/javascript" charset="utf-8">
@@ -43,18 +43,17 @@
                     socket.disconnect();
 
                     // go back to the login page
-                    window.location.href = "{{ url_for('main.home') }}";
+                    window.location.href = "{{ url_for('home') }}";
                 });
             }
         </script>
-    </head>
-    <body>
-        <h1>Flask-SocketIO-Chat: {{ room }}</h1>
+
+        <h1>{{ room }}</h1>
         <textarea id="chat" cols="80" rows="20"></textarea><br><br>
         <input id="text" size="80" placeholder="Enter your message here"><br><br>
-        <a href="#" onclick="leave_room();">Leave this room</a>
-    </body>
-</html>
+        <a href="/" onclick="leave_room();">Leave this room</a>
+
+
 
   
  </div>

@@ -6,6 +6,10 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from flask_oauthlib.client import OAuth
 from bson.objectid import ObjectId
 
+from flask_wtf import FlaskForm
+from wtforms.fields import StringField, SubmitField
+from wtforms.validators import DataRequired
+
 import pprint
 import os
 import time
@@ -57,9 +61,35 @@ except Exception as e:
 def inject_logged_in():
     return {"logged_in":('github_token' in session)}
     
-@app.route('/')
+class LoginForm(FlaskForm):
+    """Accepts a nickname and a room."""
+    name = StringField('Name', validators=[DataRequired()])
+    room = StringField('Room', validators=[DataRequired()])
+    submit = SubmitField('Enter Chatroom')
+    
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    """Login form to enter a room."""
+    form = LoginForm()
+    if form.validate_on_submit():
+        session['name'] = form.name.data
+        session['room'] = form.room.data
+        return redirect(url_for('renderPage2'))
+    elif request.method == 'GET':
+        form.name.data = session.get('name', '')
+        form.room.data = session.get('room', '')
+    return render_template('home.html', form=form)
+
+
+@app.route('/chat')
+def chat():
+    """Chat room. The user's name and room must be stored in
+    the session."""
+    name = session.get('name', '')
+    room = session.get('room', '')
+    if name == '' or room == '':
+        return redirect(url_for('.home'))
+    return render_template('page2.html', name=name, room=room)
     
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
@@ -95,6 +125,10 @@ def authorized():
 @app.route('/page1')
 def renderPage1():
     return render_template('Page1.html')
+    
+@app.route('/page2')
+def renderPage2():
+    return render_template('Page2.html')
         
 
 
