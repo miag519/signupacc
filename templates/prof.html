@@ -8,26 +8,47 @@
 
   <h1>Profile pictures!!</h1>
   <p>Select which profile picture you would like to use:</p>
-  <br>
-  <div class="flex-container">
-   <div><p><img src="static/boy1.png" alt="boy1" width="100" height="100"></a>
-   </p></div>
-   <div><p><img src="static/boy2.png" alt="boy2" width="100" height="100"></a>
-   </p></div>
-   <div><p><img src="static/boy3.png" alt="boy3" width="100" height="100"></a>
-   </p></div>
-   <div><p><img src="static/boy4.png" alt="boy4" width="100" height="100"></a>
-   </p></div>
-   </div>
+  <br><div class ="flex-container">
+  
+  <div class="row">
+  <div class="column">
+  <a><img src="static/boy1.png" class="thumbnail" height="100" width="100"/> </a>
+  </div>
+  <div class="column">
+  <a><img src="static/boy2.png" class="thumbnail" height="100" width="100"/> </a>
+  </div>
+  <div class="column">
+  <a><img src="static/boy3.png" class="thumbnail" height="100" width="100"/> </a>
+  </div>
+  <div class="column">
+  <a><img src="static/boy4.png" class="thumbnail" height="100" width="100"/> </a>
+  </div>
+  </div>
+  </div>
   <br>
   <div class ="flex-container">
-  <div><p><img src="static/girl1.png" alt="girl1" width="100" height="100"></a>
-  </p></div>
-  <div><p><img src="static/girl2.png" alt="girl2" width="100" height="100"></a>
-  </p></div>
-  <div><p><img src="static/girl3.png" alt="girl3" width="100" height="100"></a>
-  </p></div>
-  <div><p><img src="static/girl4.png" alt="girl4" width="100" height="100"></a>
-  </p></div>
+  
+  <div class="row">
+  <div class="column">
+  <a><img src="static/girl1.png" class="thumbnail" height="100" width="100"/> </a>
   </div>
+  <div class="column">
+  <a><img src="static/girl2.png" class="thumbnail" height="100" width="100"/> </a>
+  </div>
+  <div class="column">
+  <a><img src="static/girl6.png" class="thumbnail" height="100" width="100"/> </a>
+  </div>
+  <div class="column">
+  <a><img src="static/girl4.png" class="thumbnail" height="100" width="100"/> </a>
+  </div>
+  </div>
+  </div>
+  
+  <br>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">
+    Open modal
+  </button>
+  
+  
+  
 {% endblock %}
