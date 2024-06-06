@@ -11,6 +11,13 @@
 	
 	</div>
 <div class="content">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket = io();
+    socket.on('connect', function() {
+        socket.emit('my event', {data: 'I\'m connected!'});
+    });
+</script>
 <h1>Chat: {{ room }}</h1>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="//cdn.socket.io/4.4.1/socket.io.min.js"></script>
@@ -29,7 +36,7 @@
                     $('#chat').val($('#chat').val() + data.msg + '\n');
                     $('#chat').scrollTop($('#chat')[0].scrollHeight);
                 });
-                $('#text').keypress(function(e) {
+                $('#text').keyup(function(e) {
                     var code = e.keyCode || e.which;
                     if (code == 13) {
                         text = $('#text').val();
@@ -43,7 +50,7 @@
                     socket.disconnect();
 
                     // go back to the login page
-                    window.location.href = "{{ url_for('home') }}";
+                    window.location.href = "{{ url_for('page1') }}";
                 });
             }
         </script>
@@ -51,7 +58,7 @@
         <h1>{{ room }}</h1>
         <textarea id="chat" cols="80" rows="20"></textarea><br><br>
         <input id="text" size="80" placeholder="Enter your message here"><br><br>
-        <a href="/" onclick="leave_room();">Leave this room</a>
+        <a href="/page1" onclick="leave_room();">Leave this room</a>
 
 
 

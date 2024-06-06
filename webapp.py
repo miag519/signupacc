@@ -61,14 +61,18 @@ except Exception as e:
 def inject_logged_in():
     return {"logged_in":('github_token' in session)}
     
+@app.route('/')
+def home():
+    return render_template('home.html')
+    
 class LoginForm(FlaskForm):
     """Accepts a nickname and a room."""
     name = StringField('Name', validators=[DataRequired()])
     room = StringField('Room', validators=[DataRequired()])
     submit = SubmitField('Enter Chatroom')
     
-@app.route('/', methods=['GET', 'POST'])
-def home():
+@app.route('/page1', methods=['GET', 'POST'])
+def page1():
     """Login form to enter a room."""
     form = LoginForm()
     if form.validate_on_submit():
@@ -78,8 +82,7 @@ def home():
     elif request.method == 'GET':
         form.name.data = session.get('name', '')
         form.room.data = session.get('room', '')
-    return render_template('home.html', form=form)
-
+    return render_template('page1.html', form=form)
 
 @app.route('/chat')
 def chat():
@@ -88,7 +91,7 @@ def chat():
     name = session.get('name', '')
     room = session.get('room', '')
     if name == '' or room == '':
-        return redirect(url_for('.home'))
+        return redirect(url_for('.page1'))
     return render_template('page2.html', name=name, room=room)
     
 #redirect to GitHub's OAuth page and confirm callback URL
@@ -120,11 +123,6 @@ def authorized():
             print(inst)
             flash('Unable to login, please try again.', 'error')
     return redirect('/')
-
-
-@app.route('/page1')
-def renderPage1():
-    return render_template('Page1.html')
     
 @app.route('/page2')
 def renderPage2():

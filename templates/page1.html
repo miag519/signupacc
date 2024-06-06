@@ -12,9 +12,13 @@
 	</div>
 	
     <div class="content">
-    <h1>This is Page 1</h1>
-
-    <p>Lorem ipsum.</p>
+    <h1>Chat Door</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.name.label }}: {{ form.name() }} {% for error in form.name.errors %}{{ error }}{% endfor %}<br>
+            {{ form.room.label }}: {{ form.room() }} {% for error in form.room.errors %}{{ error }}{% endfor %}<br>
+            {{ form.submit() }}
+        </form>
   
  </div>
  </div>
